@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Registrasi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Halaman Registrasi</h1>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="biodata.html">Biodata</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Registrasi</a></li>
+        </ul>
+    </nav>
+
+    <img src="img/Foto.jpg" width="100%" height="400px"> 
+
+    <div>
+        <div style="display: flex; padding: 20px;">
+            <div style="flex: 3; padding-right: 20px;">
+                <form id="registrasiForm">
+                    <fieldset>
+                        <legend>Registrasi</legend>
+                        <p>
+                            <label>Nama:</label>
+                            <input type="text" name="nama" placeholder="Nama lengkap..." id="nama" />
+                        </p>
+                        <p>
+                            <label>Username:</label>
+                            <input type="text" name="username" placeholder="Username..." id="username" />
+                        </p>
+                        <p>
+                            <label>Email:</label>
+                            <input type="text" name="email" placeholder="Email anda..." id="email" />
+                        </p>
+                        <p>
+                            <label>Tanggal Lahir:</label>
+                            <input type="date" name="tanggal" id="tanggal" />
+                        </p>
+                        <p>
+                            <label>Jenis Kelamin:</label>
+                            <label><input type="radio" name="Jenis_Kelamin" value="Laki-Laki" id="laki" /> Laki-laki </label>
+                            <label><input type="radio" name="Jenis_Kelamin" value="Perempuan" id="perempuan" /> Perempuan </label>
+                        </p>
+                        <p>
+                            <label>Agama</label>
+                            <select name="Agama" id="agama">
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen Protestant">Kristen Protestant</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                            </select>
+                        </p>
+                        <p>
+                            <button type="button" onclick="konfirmasiRegistrasi()">Daftar</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+        <aside class="sidebar">
+            <h3>Alternatif Link</h3>
+            <p>Ini adalah sidebar dengan alternatif link:</p>
+            <ul>
+                <li><a href="https://unpatti.ac.id/">Website Universitas</a></li>
+                <li><a href="https://fst.unpatti.ac.id/">Website Fakultas</a></li>
+                <li><a href="https://ilkom.fst.unpatti.ac.id/">Website Prodi</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2>Sisi Kiri</h2>
+            <p>Tuntaskan pendidikanmu sampai tangis haru dirimu dan keluargamu jatuh di hari wisudahmu, SEMANGAT!!!</p>
+        </div>
+
+        <div class="column middle">
+            <h2>Bagian Tengah</h2>
+            <p>stay single sampai ketemu orang yang effortnya bisa ngalahin effort ke diriku sendiri</p>
+        </div> 
+
+        <div class="column side">
+            <h2>Sisi Kanan</h2>
+            <p>instagram : fera.tawainella7</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Fera Tawainella. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function konfirmasiRegistrasi() {
+            var nama = document.getElementById("nama").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var tanggal = document.getElementById("tanggal").value;
+            var jenisKelamin = document.querySelector('input[name="Jenis_Kelamin"]:checked');
+            var agama = document.getElementById("agama").value;
+    
+            var jenisKelaminValue = jenisKelamin ? jenisKelamin.value : "Tidak dipilih";
+    
+            var konfirmasi = "Konfirmasi Registrasi:\n\n" +
+                "Nama: " + nama + "\n\n" +
+                "Username: " + username + "\n\n" +
+                "Email: " + email + "\n\n" +
+                "Tanggal Lahir: " + tanggal + "\n\n" +
+                "Jenis Kelamin: " + jenisKelaminValue + "\n\n" +
+                "Agama: " + agama;
+
+            alert(`Konfirmasi Registrasi:\n\nNama: ${nama}\nUsername: ${username}\nEmail: ${email}\nTanggal Lahir: ${tanggal}\nJenis Kelamin: ${jenisKelaminValue}\nAgama: ${agama}`);
+        }
+    </script>
+</body>
+
+</html>
